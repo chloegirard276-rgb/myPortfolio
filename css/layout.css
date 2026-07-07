@@ -1,28 +1,111 @@
 /* ==========================
-   Styles de base (Mobile First)
+   Reset
+   ========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================
+   Body
+   ========================== */
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.6;
+}
+
+/* ==========================
+   Container
+   ========================== */
+
+.container {
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ==========================
+   Header
    ========================== */
 
 header {
+    display: grid;
     grid-template-columns: 1fr;
+    padding: var(--spacing-md) 0;
 }
+
+header .container {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* ==========================
+   Navigation
+   ========================== */
 
 nav ul {
+    display: grid;
     grid-auto-flow: row;
-    justify-content: start;
+    gap: var(--spacing-md);
+    list-style: none;
 }
 
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+/* ==========================
+   Main
+   ========================== */
+
 main {
+    display: grid;
     gap: var(--spacing-lg);
 }
 
 /* ==========================
-   Version Desktop
+   Sections
+   ========================== */
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+section .container {
+    display: grid;
+    gap: var(--spacing-md);
+}
+
+/* ==========================
+   Footer
+   ========================== */
+
+footer {
+    padding: var(--spacing-md) 0;
+}
+
+footer .container {
+    display: grid;
+    place-items: center;
+}
+
+/* ==========================
+   Desktop
    ========================== */
 
 @media (min-width: 768px) {
 
-    header {
+    header .container {
         grid-template-columns: auto 1fr;
+        align-items: center;
     }
 
     nav ul {
